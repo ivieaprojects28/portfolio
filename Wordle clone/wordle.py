@@ -2,18 +2,20 @@ import random
 title = ""
 title = "Wordle Clone"
 #loading in the word bank
-word_bank = open("Wordle clone\\words.txt", "r")
-line = word_bank.readline()
-print(line, 2)
-word_list = word_bank.readlines()
+import os
+
+# Get the absolute path to where this script is saved
+script_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(script_dir, "words.txt")
+
+with open(file_path, "r") as file:
+        word_list = [line.strip().lower() for line in file if len(line.strip()) == 5]
 
 rand_choice = 0
 
-
 #presetting a word for that round
-#rand_choice = random.randint(0, count)
-#choice = (word_list[rand_choice]).lower()
-#print(choice)
+rand_choice = random.randint(0, len(word_list)-1)
+choice = (word_list[rand_choice]).lower()
 
 #lists to keep track of letter guesses
 
