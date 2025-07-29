@@ -1,0 +1,1 @@
+I followed a tutorial to make a hotel management system. This helped me with the basic of input/output, and variable handling.
